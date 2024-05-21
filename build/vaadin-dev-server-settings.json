@@ -1,0 +1,18 @@
+{
+  "frontendFolder": "C:/Users/lana/IdeaProjects/film_distribution/frontend",
+  "themeFolder": "themes",
+  "themeResourceFolder": "C:/Users/lana/IdeaProjects/film_distribution/frontend/generated/jar-resources",
+  "staticOutput": "C:/Users/lana/IdeaProjects/film_distribution/build/classes/META-INF/VAADIN/webapp/VAADIN/static",
+  "generatedFolder": "generated",
+  "statsOutput": "C:\\Users\\lana\\IdeaProjects\\film_distribution\\build\\classes\\META-INF\\VAADIN\\config",
+  "frontendBundleOutput": "C:\\Users\\lana\\IdeaProjects\\film_distribution\\build\\classes\\META-INF\\VAADIN\\webapp",
+  "devBundleOutput": "C:/Users/lana/IdeaProjects/film_distribution/src/main/dev-bundle/webapp",
+  "devBundleStatsOutput": "C:/Users/lana/IdeaProjects/film_distribution/src/main/dev-bundle/config",
+  "jarResourcesFolder": "C:/Users/lana/IdeaProjects/film_distribution/frontend/generated/jar-resources",
+  "generatedFlowImportsFolder": "build/frontend",
+  "themeName": "",
+  "clientServiceWorkerSource": "C:\\Users\\lana\\IdeaProjects\\film_distribution\\build\\sw.ts",
+  "pwaEnabled": false,
+  "offlineEnabled": false,
+  "offlinePath": "'offline.html'"
+}

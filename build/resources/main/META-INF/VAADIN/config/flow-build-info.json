@@ -1,0 +1,17 @@
+{
+  "productionMode": false,
+  "eagerServerLoad": false,
+  "npmFolder": "C:\\Users\\lana\\IdeaProjects\\film_distribution",
+  "node.version": "v18.14.1",
+  "node.download.root": "https://nodejs.org/dist/",
+  "generatedFolder": "C:\\Users\\lana\\IdeaProjects\\film_distribution\\build\\frontend",
+  "frontendFolder": "C:\\Users\\lana\\IdeaProjects\\film_distribution\\frontend",
+  "connect.javaSourceFolder": "C:\\Users\\lana\\IdeaProjects\\film_distribution\\src\\main\\java",
+  "javaResourceFolder": "C:\\Users\\lana\\IdeaProjects\\film_distribution\\src\\main\\resources",
+  "connect.applicationProperties": "C:\\Users\\lana\\IdeaProjects\\film_distribution\\src\\main\\resources\\application.properties",
+  "connect.openApiFile": "C:\\Users\\lana\\IdeaProjects\\film_distribution\\build\\generated-resources\\openapi.json",
+  "project.frontend.generated": "C:\\Users\\lana\\IdeaProjects\\film_distribution\\frontend\\generated",
+  "pnpm.enable": false,
+  "require.home.node": false,
+  "build.folder": "build"
+}

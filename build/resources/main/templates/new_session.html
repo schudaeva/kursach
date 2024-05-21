@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Добавление сеанса</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <style>
+    body {
+      background-image: url(https://sun9-38.userapi.com/impg/CmTqNAULFmVpWCS65AEXF1zHSrkNrqQd-PapWw/Lkaz3yuNNZg.jpg?size=2560x1320&quality=95&sign=23863f200fda43a611a4a144a0042f7b&type=album); /* Путь к фоновому изображению */
+    }
+    h1, h4, h5, th, tr {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark justify-content-between" style="background-color: #121c33">
+  <div class="container-fluid">
+    <a class="navbar-brand" th:href="@{/admin}">Система кинопроката</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" th:href="@{/logout}">Выход</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div style="max-width: 1200px; margin: 0 auto">
+  <blockquote class="blockquote text-center"><h1>Добавление сеанса</h1></blockquote>
+  <div class="row">
+    <div class="col-md-8 offset-md-4">
+      <form action="#" th:action="@{/save_session}" th:object="${ses}" method="post">
+        <table>
+          <tr>
+            <td>id фильма:</td>
+            <td><input type="number" th:field="*{film_id}" required></td>
+          </tr>
+          <tr>
+            <td>название фильма:</td>
+            <td><input type="text" th:field="*{film_name}" required></td>
+          </tr>
+          <tr>
+            <td>id кинотеатра:</td>
+            <td><input type="number" th:field="*{cinema_id}" required></td>
+          </tr>
+          <tr>
+            <td>название кинотеатра:</td>
+            <td><input type="text" th:field="*{cinema_name}" required></td>
+          </tr>
+          <tr>
+            <td>дата:</td>
+            <td><input type="date" th:field="*{start_date}" required></td>
+          </tr>
+          <tr>
+            <td>время:</td>
+            <td><input type="time" th:field="*{time}" required></td>
+          </tr>
+          <tr>
+            <td>количество билетов:</td>
+            <td><input type="number" th:field="*{ticket_num}" required></td>
+          </tr>
+
+          <tr>
+            <td>
+              <button type="submit" class="btn btn-outline-dark" style="background-color: lightskyblue" data-tooggle="button" aria-pressed="false" autocomplete="off">Сохранить</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
