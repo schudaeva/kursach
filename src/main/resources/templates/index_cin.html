@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Кинопрокат</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <link href="./templates/style.css" rel="stylesheet" />
+    <style>
+        body {
+            background-image: url(https://sun9-38.userapi.com/impg/CmTqNAULFmVpWCS65AEXF1zHSrkNrqQd-PapWw/Lkaz3yuNNZg.jpg?size=2560x1320&quality=95&sign=23863f200fda43a611a4a144a0042f7b&type=album); /* Путь к фоновому изображению */
+        }
+        h1, h4, h5, th, tr {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark justify-content-between" style="background-color: #121c33">
+    </ul>
+    <div class="container-fluid">
+        <a class="navbar-brand" th:href="@{/index}">Система кинопроката</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/}">Фильмы</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/index/cinema_list}">Кинотеатры</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/index/session_list}">Сеансы</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/index/author}">Об авторе</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/login}">Вход</a>
+                </li>
+            </ul>
+            <form class="form" th:action="@{/index/cinema_list}">
+                <input type="search" class="form-control-sm" name="keyword" id="keyword"  th:value="${keyword}" placeholder="Поиск" required/>
+                <input type="submit" class="btn btn-outline-dark btn-sm" style="background-color: lightskyblue" value="Поиск"/>
+                <input type="button" class="btn btn-outline-dark btn-sm" style="background-color: lightskyblue" value="Очистить" id="btnClear"
+                       onclick="clearSearch()"/>
+            </form>
+        </div>
+    </div>
+</nav>
+<br /><br />
+<div class="wrapper" style="max-width: 1200px; margin: 0 auto">
+    <blockquote class="blockquote text-center"><h1>Кинотеатры</h1></blockquote>
+    <!--  <div class="row">-->
+    <!--    <div class="text-center">-->
+    <!--      <h4>Поиск фильма по любому критерию:</h4>-->
+    <!--      <form th:action="@{/}">-->
+    <!--        <input type="text" name="keyword" id="keyword" size="30" th:value="${keyword}" required/>-->
+    <!--        <input type="submit" class="btn btn-success btn-sm" value="Поиск"/>-->
+    <!--        <input type="button" class="btn btn-warning btn-sm" value="Очистить" id="btnClear"-->
+    <!--               onclick="clearSearch()"/>-->
+    <!--&lt;!&ndash;      </form>&ndash;&gt;-->
+    <!--    </div>-->
+    <!--  </div>-->
+    <table id="1" class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th scope="col" onclick="sortTable(0)" style="cursor: pointer">ID</th>
+            <th scope="col">Название</th>
+            <th scope="col">Адрес</th>
+            <th scope="col">Метро</th>
+            <th scope="col">Рейтинг</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cinema: ${listCinema}">
+            <th scope="row" class="text-black" th:text="${cinema.id}">ID отстутсвует</th>
+            <th scope="row" class="text-black" th:text="${cinema.name}">Название отсутствует</th>
+            <th scope="row" class="text-black" th:text="${cinema.address}">Адрес отсутствует</th>
+            <th scope="row" class="text-black " th:text="${cinema.metro}">Метро отсутствует</th>
+            <th scope="row" class="text-black" th:text="${cinema.rating}">Рейтинг отсутствует</th>
+            <td>
+                <a th:href="@{'/index/session_list?keyword='+${cinema.name}}"><button type="button" class="btn btn-outline-dark" style="background-color: lightskyblue">Сеансы</button></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <p class="text-white">
+        <script type="text/javascript">
+            function getRowsColumn() {
+                let table = document.getElementById('1')
+                let tBody = table.querySelector('tbody')
+                const count = tBody.querySelectorAll('tr').length;
+                document.write('Количество кинотеатров в таблице: ' + count)
+            }
+
+            getRowsColumn()
+        </script>
+    </p>
+
+</div>
+<script type="text/javascript">
+    function clearSearch() {
+        window.location = "[[@{/index/cinema_list}]]";
+    }
+
+
+</script>
+</body>
+</html>
